@@ -4,6 +4,7 @@ NurseBot es un sistema diseñado para automatizar la dispensación de medicament
 ## Tecnologías Empleadas
 ### RobotStudio
 RobotStudio es una plataforma de simulación robótica que recrea la celda de trabajo, ofreciendo un entorno virtual para programar y probar movimientos. En NurseBot, se define toda la lógica de manipulación de frascos, goteros y pastillas. Mediante esta herramienta, se afinan las trayectorias de la pinza y se integra la comunicación con otros módulos antes de cualquier implementación física.
+
 ![image](https://github.com/user-attachments/assets/7a95ce79-1333-4161-991a-5069108a8ef6)
 
 ### OPC UA
@@ -14,10 +15,12 @@ La librería face_recognition permite detectar y reconocer rostros utilizando co
 
 ### PostgreSQL
 PostgreSQL es una base de datos relacional robusta y escalable. En NurseBot, se utiliza para almacenar la información de pacientes, su plan de medicación y los detalles de cada medicamento. Su alojamiento en la nube hace posible el acceso remoto y la actualización inmediata de los datos, evitando inconsistencias.
+
 ![image](https://github.com/user-attachments/assets/b2416697-b326-4fbb-b031-2b8da509c87f)
 
 ### FlowiseAI
 FlowiseAI ofrece un entorno visual para encadenar procesos de inteligencia artificial y lógica de negocio. Aquí se orquestan los flujos de preguntas y respuestas, conectando el reconocimiento de voz, la recuperación de información y el modelo de lenguaje para generar respuestas coherentes y contextualizadas.
+
 ![image](https://github.com/user-attachments/assets/58c1c1f3-7919-4506-ab30-4052ae614731)
 
 ### Ollama
@@ -25,6 +28,7 @@ Ollama actúa como un servidor de modelos de lenguaje, proporcionando un endpoin
 
 ### RAG (Retrieval-Augmented Generation)
 El enfoque RAG combina la recuperación de información con la generación de lenguaje. Primero se buscan fragmentos relevantes en un índice vectorial, y después se suministran como contexto al LLM. En NurseBot, esta técnica permite enriquecer las respuestas del agente conversacional con datos privados o específicos almacenados en la base de datos.
+
 ![image](https://github.com/user-attachments/assets/250ee4c0-2c75-4ac8-909d-663d7c3b0faf)
 
 ### Whisper
@@ -34,9 +38,9 @@ Whisper (y variantes optimizadas como WhisperS2T) son modelos de Speech-to-Text 
 XTTS es un módulo de Text-to-Speech que transforma la respuesta del sistema en audio. Tras elaborar la contestación, NurseBot la pasa a XTTS para generar una voz natural, facilitando la interacción fluida con el usuario, tanto en español como en otros idiomas.
 
 ### Tkinter
-![image](https://github.com/user-attachments/assets/f5300eec-35f8-4d67-a569-e047b374063c)
-
 Tkinter es la biblioteca de interfaces gráficas nativa de Python. NurseBot utiliza esta herramienta para presentar un panel de control donde el personal de enfermería puede visualizar la información del paciente, editar datos en tiempo real y controlar la dispensación de medicamentos de forma intuitiva.
+
+![image](https://github.com/user-attachments/assets/f5300eec-35f8-4d67-a569-e047b374063c)
 
 ## Vídeo de la aplicación
 En este apartado se encuentra un enlace a un vídeo a YouTube
