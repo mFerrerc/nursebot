@@ -34,4 +34,137 @@ Tkinter es la biblioteca de interfaces gráficas nativa de Python. NurseBot util
 
 ## 
 En conjunto, estas tecnologías se combinan para ofrecer un sistema integral que abarca tanto la programación y simulación del robot como la interacción multimodal (voz y visión) y la administración de datos, siempre con el objetivo de mejorar la seguridad y la eficiencia en el cuidado de los pacientes.
+
+## Vídeo de la aplicación
+
+En este apartado se encuentra un enlace a un vídeo a YouTube
+donde se muestra el funcionamiento al completo de la aplicación de robótica de servicios.
+
+https://www.youtube.com/watch?v=vQD2WK-XxbI&feature=youtu.be
+
+
+## Requisitos
+El sistema NurseBot requiere un conjunto de librerías, frameworks y configuraciones específicas para funcionar correctamente. A continuación, se describen los componentes principales tomados de la Guía de Usuario, incluyendo las dependencias mínimas, las herramientas de simulación y los ajustes sugeridos para una instalación exitosa.
+
+### RobotStudio
+
+Para la simulación robótica es fundamental contar con:
+
+- RobotStudio de ABB, que permite definir la celda de trabajo y programar las trayectorias del robot.
+
+- La librería de OPC UA, imprescindible para la comunicación entre RobotStudio y la aplicación de Python, instalable mediante:
+
+pip install opcua
+
+### Base de Datos
+La gestión de la información de pacientes, medicamentos y recetas se realiza en PostgreSQL. Para interactuar con la base de datos en Python, se requiere:
+
+pip install psycopg2
  
+### Control por Visión
+Este apartado se encarga de detectar y reconocer rostros para asociarlos al plan de medicación:
+
+OpenCV: Biblioteca para el procesamiento de imágenes en tiempo real.
+
+pip install opencv
+
+face_recognition: Motor de detección y comparación de rostros.
+
+pip install face_recognition
+
+dlib: Base subyacente para la extracción de características faciales.
+
+pip install dlib
+
+Estructura de archivos: Debe existir un archivo persona.txt y una carpeta known_faces con subcarpetas (una por cada persona), conteniendo sus imágenes de entrenamiento.
+
+### Agente Conversacional
+El módulo de interacción por voz y generación de respuestas depende de varias tecnologías, detalladas a continuación:
+
+#### Configuración de GPU
+Para un rendimiento óptimo en la etapa de procesamiento de voz y modelos de lenguaje se recomienda:
+
+- Python 3.9
+
+- CUDA 12.1
+
+- PyTorch 2.5.1
+
+- TensorFlow 2.18.0
+
+- cudnn-cu12 9.1.0.70
+
+#### Detección de Habla
+El sistema usa Silero-VAD para identificar cuándo el usuario habla y cuándo hay silencio:
+
+pip install numpy>=1.24.0
+pip install torch>=1.12.0
+pip install torchaudio>=0.12.0
+
+En Windows puede instalarse PyAudio con:
+
+pip install pyaudio
+
+En Linux, se recomienda:
+
+apt install python3-pyaudio
+
+#### STT (Speech-to-Text)
+Para la transcripción del audio en tiempo real, NurseBot combina dos variantes de Whisper:
+
+Whisper
+
+pip install whisper
+
+WhisperS2T
+
+pip install -U whisper-s2t
+
+Además, es necesario contar con ffmpeg, instalable según el entorno:
+
+Ubuntu:
+
+apt-get install -y libsndfile1 ffmpeg
+
+Mac:
+
+brew install ffmpeg
+
+Conda (cualquier SO):
+
+conda install conda-forge::ffmpeg
+
+#### LLM (Modelos de Lenguaje)
+NurseBot utiliza Ollama como servidor de modelos de lenguaje y Flowise para gestionar los flujos de información:
+
+- Docker Ollama: Se requiere el contenedor de herramientas de NVIDIA para habilitar CUDA y ejecutar Ollama con la GPU. Posteriormente, se descargan y configuran los modelos (como llama3.1:8b).
+
+- Docker Flowise: Para servir el flujo del agente conversacional, se construye y lanza la imagen en el puerto indicado.
+
+#### Traducción
+Si el usuario habla un idioma diferente al español, se realiza la traducción con:
+
+pip install googletrans==4.0.0-rc1
+pip install requests
+
+#### TTS (Text-to-Speech)
+La respuesta se sintetiza en una voz natural mediante XTTS dentro de un servidor Flask:
+
+pip install flask
+sudo apt-get -y install libegl1
+sudo apt-get -y install libopengl0
+sudo apt-get -y install libxcb-cursor
+pip install gradio==4.44.1
+pip install fastapi==0.103.1
+pip install pydantic==2.3.0
+pip install ctranslate2==4.4.0
+
+Además, es necesario clonar el repositorio xtts-webui, instalar sus dependencias (requirements.txt), y descargar los modelos de voz indicados con los comandos wget y unzip.
+
+#### Interfaz
+La interfaz gráfica se basa en Tkinter y requiere de:
+
+pip install tkinter
+pip install Pillow
+
+Dicha interfaz muestra los datos del paciente (edad, habitación, medicación) y posibilita la edición de información en tiempo real.
