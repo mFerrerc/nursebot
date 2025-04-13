@@ -40,8 +40,6 @@ XTTS es un módulo de Text-to-Speech que transforma la respuesta del sistema en 
 ### Tkinter
 Tkinter es la biblioteca de interfaces gráficas nativa de Python. NurseBot utiliza esta herramienta para presentar un panel de control donde el personal de enfermería puede visualizar la información del paciente, editar datos en tiempo real y controlar la dispensación de medicamentos de forma intuitiva.
 
-![image](https://github.com/user-attachments/assets/f5300eec-35f8-4d67-a569-e047b374063c)
-
 ## Vídeo de la aplicación
 En este apartado se encuentra un enlace a un vídeo a YouTube
 donde se muestra el funcionamiento al completo de la aplicación de robótica de servicios.
