@@ -1,3 +1,5 @@
+<div align="justify">
+
 # NurseBot: Sistema Integral de Asistencia de Medicación Automatizada
 NurseBot es un sistema diseñado para automatizar la dispensación de medicamentos, enlazando el reconocimiento del paciente, la gestión de dosis y la interacción por voz. Tras detectar quién solicita la medicación, el robot sirve la dosis adecuada y registra cada administración en una base de datos, al mismo tiempo que mantiene una comunicación conversacional con el usuario.
 
@@ -185,3 +187,5 @@ pip install Pillow
 ```
 
 Dicha interfaz muestra los datos del paciente (edad, habitación, medicación) y posibilita la edición de información en tiempo real.
+
+</div>
