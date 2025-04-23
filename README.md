@@ -4,10 +4,13 @@
 NurseBot es un sistema diseñado para automatizar la dispensación de medicamentos, enlazando el reconocimiento del paciente, la gestión de dosis y la interacción por voz. Tras detectar quién solicita la medicación, el robot sirve la dosis adecuada y registra cada administración en una base de datos, al mismo tiempo que mantiene una comunicación conversacional con el usuario.
 
 ## Tecnologías Empleadas
+
 ### RobotStudio
 RobotStudio es una plataforma de simulación robótica que recrea la celda de trabajo, ofreciendo un entorno virtual para programar y probar movimientos. En NurseBot, se define toda la lógica de manipulación de frascos, goteros y pastillas. Mediante esta herramienta, se afinan las trayectorias de la pinza y se integra la comunicación con otros módulos antes de cualquier implementación física.
 
-![image](https://github.com/user-attachments/assets/7a95ce79-1333-4161-991a-5069108a8ef6)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7a95ce79-1333-4161-991a-5069108a8ef6" />
+</p>
 
 ### OPC UA
 OPC UA es un estándar de comunicación cliente-servidor que facilita el intercambio de datos entre distintas aplicaciones industriales. En el proyecto, NurseBot se vincula con RobotStudio a través de este protocolo, transmitiendo las órdenes de medicación y recibiendo la confirmación de que el robot ha completado la tarea.
@@ -18,12 +21,16 @@ La librería face_recognition permite detectar y reconocer rostros utilizando co
 ### PostgreSQL
 PostgreSQL es una base de datos relacional robusta y escalable. En NurseBot, se utiliza para almacenar la información de pacientes, su plan de medicación y los detalles de cada medicamento. Su alojamiento en la nube hace posible el acceso remoto y la actualización inmediata de los datos, evitando inconsistencias.
 
-![image](https://github.com/user-attachments/assets/b2416697-b326-4fbb-b031-2b8da509c87f)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b2416697-b326-4fbb-b031-2b8da509c87f" />
+</p>
 
 ### FlowiseAI
 FlowiseAI ofrece un entorno visual para encadenar procesos de inteligencia artificial y lógica de negocio. Aquí se orquestan los flujos de preguntas y respuestas, conectando el reconocimiento de voz, la recuperación de información y el modelo de lenguaje para generar respuestas coherentes y contextualizadas.
 
-![image](https://github.com/user-attachments/assets/58c1c1f3-7919-4506-ab30-4052ae614731)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/58c1c1f3-7919-4506-ab30-4052ae614731" />
+</p>
 
 ### Ollama
 Ollama actúa como un servidor de modelos de lenguaje, proporcionando un endpoint unificado para ejecutar inferencias con distintas variantes de LLM. NurseBot se apoya en Ollama para servir el modelo (por ejemplo, Llama3.1 8B), asegurando una gestión centralizada y eficiente de los recursos.
@@ -31,7 +38,9 @@ Ollama actúa como un servidor de modelos de lenguaje, proporcionando un endpoin
 ### RAG (Retrieval-Augmented Generation)
 El enfoque RAG combina la recuperación de información con la generación de lenguaje. Primero se buscan fragmentos relevantes en un índice vectorial, y después se suministran como contexto al LLM. En NurseBot, esta técnica permite enriquecer las respuestas del agente conversacional con datos privados o específicos almacenados en la base de datos.
 
-![image](https://github.com/user-attachments/assets/250ee4c0-2c75-4ac8-909d-663d7c3b0faf)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/250ee4c0-2c75-4ac8-909d-663d7c3b0faf" />
+</p>
 
 ### Whisper
 Whisper (y variantes optimizadas como WhisperS2T) son modelos de Speech-to-Text capaces de transcribir de forma confiable el audio de los usuarios. Aquí, NurseBot se basa en Whisper para entender las solicitudes verbales, detectando el idioma y convirtiendo la voz en texto antes de consultar el agente conversacional.
